@@ -1,0 +1,77 @@
+.wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 50%;
+	flex: 1;
+	min-width: 300px;
+	max-width: 800px;
+	margin: 1rem 0;
+	border-radius: 1rem;
+	background-color: #eeeeee;
+	overflow: hidden;
+}
+
+.messages {
+	display: flex;
+	flex-flow: column-reverse nowrap;
+	flex: 1;
+	padding: 0.5rem;
+
+	.bubble {
+		margin: 0.5rem;
+		border-radius: 1rem;
+		padding: 1rem;
+		display: flex;
+		max-width: 75%;
+		min-width: 20px;
+		overflow-wrap: anywhere;
+	}
+
+	.userBubble {
+		@extend .bubble;
+		background-color: #948bf7;
+		align-self: flex-end;
+		color: white;
+	}
+
+	.botBubble {
+		@extend .bubble;
+		background-color: #3ae9ec;
+		align-self: flex-start;
+		color: black;
+	}
+}
+
+.textInput {
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: #dddddd;
+	height: 3rem;
+	width: 100%;
+	input {
+		outline: none;
+		border: none;
+		background-color: transparent;
+		font-size: 1rem;
+		margin: 0.5rem;
+		flex: 1;
+	}
+
+	button {
+		outline: none;
+		border: none;
+		background-color: #948bf7;
+		width: 6rem;
+		height: 3rem;
+		color: white;
+		font-size: 1rem;
+		font-weight: bold;
+		cursor: pointer;
+		transition: filter 200ms;
+
+		&:disabled {
+			pointer-events: none;
+			filter: brightness(0.8);
+		}
+	}
+}
